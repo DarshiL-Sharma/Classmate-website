@@ -1,4 +1,4 @@
-# Classmate — Official Website
+# Classmate Official Website
 
 This repository contains the source code for the **official Classmate website**
 (classmate.app) — the promotional site for the Classmate mobile app, built for
