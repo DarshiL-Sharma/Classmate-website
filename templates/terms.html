@@ -3,9 +3,9 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Terms &amp; Conditions</title>
+  <title>Terms &amp; Conditions — Classmate</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Sora:wght@600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
 </head>
 <body>
@@ -18,7 +18,8 @@
       </div>
       <div class="links">
         <a href="{{ url_for('about_page') }}">About</a>
-        <a href="{{ url_for('terms_condition') }}">Terms</a>
+        <a href="{{ url_for('terms_condition') }}" class="active">Terms</a>
+        <a href="{{ url_for('about_page') }}#download" class="nav-cta">Get the app</a>
       </div>
     </nav>
   </div>
@@ -26,10 +27,10 @@
   <div class="container">
     <article class="terms-article">
       <h1>Terms &amp; Conditions</h1>
-      <p class="updated"><strong>Last updated:</strong> [Add date before publishing]</p>
+      <p class="updated"><strong>Last updated:</strong> 03/08/2026</p>
 
       <p>
-        Welcome to [App Name] ("the App", "we", "us"), a community platform built for students
+        Welcome to the Classmate ("the App", "we", "us"), a community platform built for students
         of IPS Academy. By creating an account or using the App, you agree to the terms below.
         If you do not agree, please do not use the App.
       </p>
@@ -38,7 +39,7 @@
 
       <h2>1. Eligibility</h2>
       <p>1.1 The App is intended for current students (and, where applicable, faculty) of IPS
-        Academy. Registration requires a valid college email and enrollment number.</p>
+        Academy. Registration requires a valid college email or valid enrollment number.</p>
       <p>1.2 You are responsible for ensuring the information you provide during registration
         (name, email, enrollment number) is accurate and belongs to you. Impersonating another
         student, faculty member, or CR is strictly prohibited and may result in account suspension.</p>
@@ -107,7 +108,7 @@
         no system is 100% secure. You should not share sensitive information (passwords, payment
         details) through the community feed or comments.</p>
       <p>6.6 You may request deletion of your account and associated personal data by contacting
-        us at <strong>[support email/link]</strong>. Some information may be retained where
+        us at <strong>0808cs251104.ies@ipsacademy.org</strong>. Some information may be retained where
         required for record-keeping or legal purposes.</p>
 
       <h2>7. Official Links &amp; Third-Party Content</h2>
@@ -119,8 +120,8 @@
         separately.</p>
 
       <h2>8. Intellectual Property</h2>
-      <p>8.1 The App's design, branding, and original content belong to [App Name / your name or
-        organization]. Content posted by users (posts, comments) remains owned by the user who
+      <p>8.1 The App's design, branding, and original content belong to [Classmate / Darshil Sharma or
+        Team APX Gp]. Content posted by users (posts, comments) remains owned by the user who
         posted it, but by posting you grant the App a license to display it within the platform.</p>
       <p>8.2 College-owned materials (syllabus, timetables, official notices) remain the property
         of IPS Academy and are displayed in the App for student convenience only.</p>
@@ -144,11 +145,24 @@
 
       <h2>11. Contact</h2>
       <p>For questions about these Terms, to report misuse, or to request account/data deletion,
-        contact: <strong>[support email or in-app contact link]</strong></p>
+        contact: <strong>0808cs251104.ies@ipsacademy.org</strong></p>
 
       <hr>
     </article>
   </div>
 
+  <div class="container">
+    <footer class="site-footer">
+      <div class="footer-row">
+        <div class="footer-brand">© 2026 Darshil Sharma. Classmate — IPS Community.</div>
+        <div class="footer-links">
+          <a href="{{ url_for('about_page') }}">About</a>
+          <a href="{{ url_for('about_page') }}#download">Download</a>
+        </div>
+      </div>
+    </footer>
+  </div>
+
+  <script src="{{ url_for('static', filename='js/main.js') }}"></script>
 </body>
 </html>
