@@ -1,12 +1,8 @@
-/* =========================================================
-   Classmate — shared front-end behaviour
-   ========================================================= */
 
 document.addEventListener('DOMContentLoaded', () => {
 
   const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
-  /* ---------- nav shadow on scroll ---------- */
   const nav = document.querySelector('.site-nav');
   if (nav) {
     const onScroll = () => {
@@ -16,7 +12,6 @@ document.addEventListener('DOMContentLoaded', () => {
     window.addEventListener('scroll', onScroll, { passive: true });
   }
 
-  /* ---------- scroll reveal ---------- */
   const revealEls = document.querySelectorAll('.reveal');
   if (revealEls.length) {
     if (reducedMotion || !('IntersectionObserver' in window)) {
@@ -34,7 +29,6 @@ document.addEventListener('DOMContentLoaded', () => {
       revealEls.forEach(el => io.observe(el));
     }
 
-    // stagger index for children of .reveal-stagger groups
     document.querySelectorAll('.reveal-stagger').forEach(group => {
       Array.from(group.children).forEach((child, i) => {
         child.style.setProperty('--i', i);
@@ -42,7 +36,6 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  /* ---------- split-flap hero ticker ---------- */
   const flap = document.getElementById('flap');
   if (flap && !reducedMotion) {
     const words = flap.dataset.words
@@ -68,19 +61,16 @@ document.addEventListener('DOMContentLoaded', () => {
       const isFinal = words[i] === finalWord;
       renderWord(words[i], isFinal);
 
-      // pause longer on the final "Classmate" frame
       const delay = isFinal ? 2600 : 1400;
       setTimeout(tick, delay);
     };
 
     setTimeout(tick, 1400);
   } else if (flap) {
-    // reduced motion: just show the final word, no animation
     const words = flap.dataset.words ? flap.dataset.words.split('|') : ['Classmate'];
     flap.innerHTML = `<span class="flap-word is-classmate">${words[words.length - 1]}</span>`;
   }
 
-  /* ---------- phone parallax tilt ---------- */
   const stage = document.querySelector('.hero-stage');
   const phone = document.querySelector('.phone');
   if (stage && phone && !reducedMotion && window.matchMedia('(hover: hover)').matches) {
@@ -97,7 +87,6 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  /* ---------- graceful fallback for missing screenshot images ---------- */
   document.querySelectorAll('img[data-fallback-label]').forEach(img => {
     img.addEventListener('error', () => {
       const wrap = img.parentElement;
